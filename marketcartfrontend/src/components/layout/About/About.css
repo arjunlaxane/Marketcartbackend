@@ -1,0 +1,17 @@
+.heading {
+  text-align: center;
+  margin-top: 20px;
+  font-family: 'Roboto';
+  font-size: 30px;
+  font-weight: 400;
+  color: rgb(121, 112, 217);
+  margin-bottom: 80px;
+}
+.aboutme {
+  text-align: center;
+  margin-top: 20%;
+
+  font-family: 'Roboto';
+  font-size: 20px;
+  font-weight: 300;
+}
