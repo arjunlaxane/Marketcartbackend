@@ -50,7 +50,7 @@ connectDatabase();
 
 const port = process.env.PORT || 4000;
 
-app.get('/', (req, res) => res.send(`Server Running`));
+// app.get('/', (req, res) => res.send(`Server Running`));
 
 if (process.env.NODE_ENV == 'production') {
   app.use(express.static('marketcartfrontend/build'));
