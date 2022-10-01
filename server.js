@@ -6,7 +6,6 @@ const express = require('express');
 
 const fileUpload = require('express-fileupload');
 
-// const cors = require('cors');
 var cloudinary = require('cloudinary').v2;
 
 //config
@@ -26,7 +25,6 @@ const order = require('./routes/orderRoute');
 const payment = require('./routes/paymentRoute');
 
 app.use(express.json());
-// app.use(cors());
 
 app.use(fileUpload({ useTempFiles: true }));
 
