@@ -215,7 +215,6 @@ exports.getAllReview = async (req, res, next) => {
   let product;
   try {
     product = await Product.findById(req.query.id);
-    console.log(req);
   } catch (error) {
     res.status(400).send(error.message);
   }

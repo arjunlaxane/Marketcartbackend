@@ -57,7 +57,7 @@ const NewProduct = () => {
     if (success) {
       alert.success('Product Created Successfully');
       navigate('/admin/dashboard');
-      dispatch({ type: NEW_PRODUCT_RESET }); //we dispatch this bcoz if not then it will continue to show success. with this success will be false
+      dispatch({ type: NEW_PRODUCT_RESET });
     }
   }, [dispatch, alert, error, navigate, success]);
 

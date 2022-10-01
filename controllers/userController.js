@@ -75,15 +75,6 @@ exports.loginUser = async (req, res, next) => {
 //logout user
 
 exports.logout = async (req, res, next) => {
-  // try {
-  // res.cookie('token', null, {
-  // expires: new Date(Date.now()),
-  // httpOnly: true,
-  // });
-  // } catch (err) {
-  // return console.log('error', err);
-  // }
-
   localStorage.removeItem('myToken');
   res.status(200).json({
     success: true,

@@ -33,7 +33,6 @@ class ApiFeatures {
         }
       : {};
 
-    // console.log(keyword);
     //it is getting keyword from regex
     this.query = this.query.find({ ...keyword });
     return this;
@@ -41,18 +40,14 @@ class ApiFeatures {
 
   filter() {
     const queryCopy = { ...this.querystr };
-    // console.log(queryCopy);
 
     //Removing some fields for category
 
     const removeFields = ['keyword', 'page', 'limit'];
 
     removeFields.forEach(key => delete queryCopy[key]);
-    // console.log(queryCopy);
 
     //filter for price and rating
-
-    // console.log(queryCopy);
 
     //qurycopy is object
 
@@ -62,7 +57,6 @@ class ApiFeatures {
 
     this.query = this.query.find(JSON.parse(queryStr));
 
-    // console.log(queryStr);
     return this;
   }
 
@@ -85,11 +79,11 @@ router.get('/products', async (req, res) => {
     // this productcount is for dashboard for frontend
 
     const productsCount = await Product.countDocuments();
-    // console.log(req.query);
+
     const apiFeature = new ApiFeatures(Product.find(), req.query)
       .search()
       .filter();
-    // console.log(apiFeature);
+
     let products = await apiFeature.query;
 
     let filteredProductsCount = products.length;
@@ -97,7 +91,6 @@ router.get('/products', async (req, res) => {
     apiFeature.pagination(resultPerPage);
 
     products = await apiFeature.query.clone();
-    // console.log(products);
 
     res.status(200).json({
       success: true,

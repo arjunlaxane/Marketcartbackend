@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useRef, useState } from 'react';
 import './LoginSignUp.css';
 import Loader from '../layout/Loader/Loader';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 import FaceIcon from '@material-ui/icons/Face';
@@ -13,7 +13,6 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 const LoginSignUp = () => {
   const dispatch = useDispatch();
-  const location = useLocation();
 
   const alert = useAlert();
 
@@ -45,7 +44,6 @@ const LoginSignUp = () => {
     e.preventDefault();
 
     dispatch(login(loginEmail, loginPassword));
-    // console.log('Login Form is submitted');
   };
 
   const registerSubmit = e => {
@@ -59,8 +57,6 @@ const LoginSignUp = () => {
     myForm.set('avatar', avatar);
 
     dispatch(register(myForm));
-
-    // console.log('Signup form is submitted');
   };
 
   const registerDataChange = e => {
@@ -79,8 +75,6 @@ const LoginSignUp = () => {
     }
   };
 
-  const redirect = location.search ? location.search.split('=')[1] : '/account';
-
   useEffect(() => {
     if (error) {
       alert.error(error);
@@ -88,8 +82,7 @@ const LoginSignUp = () => {
     }
 
     if (isAuthenticated) {
-      // navigate('/account');
-      navigate(redirect);
+      return navigate('/account');
     }
   }, [dispatch, error, alert, navigate, isAuthenticated, redirect]);
 

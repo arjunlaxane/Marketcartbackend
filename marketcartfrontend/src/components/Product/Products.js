@@ -48,7 +48,6 @@ const Products = () => {
   } = useSelector(state => state.products);
 
   const { keyword } = useParams();
-  // console.log(keyword);//jeans
 
   const [price, setPrice] = useState([0, 100000]);
 

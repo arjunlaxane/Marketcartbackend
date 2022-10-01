@@ -133,7 +133,7 @@ exports.updateOrder = async (req, res, next) => {
 async function updateStock(id, quantity) {
   try {
     const product = await Product.findById(id);
-    // console.log('ans', id, product.Stock, quantity);
+
     product.Stock -= quantity;
 
     await product.save({ validateBeforeSave: false });

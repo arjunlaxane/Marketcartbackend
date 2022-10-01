@@ -4,7 +4,6 @@ import './Search.css';
 import Metadata from '../layout/Metadata';
 const Search = () => {
   const navigate = useNavigate();
-  // console.log(history);
 
   const [keyword, setKeyword] = useState('');
 

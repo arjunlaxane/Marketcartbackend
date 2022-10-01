@@ -56,17 +56,12 @@ userSchema.pre('save', async function (next) {
 
 require('dotenv').config({ path: 'config.env' });
 
-// JWT TOKEN
-// console.log('SECRET>>>>', process.env.JWT_SECRET);
-// console.log('expiresIn>>>>', process.env.JWT_EXPIRE);
-
 if (typeof localStorage === 'undefined' || localStorage === null) {
   const LocalStorage = require('node-localstorage').LocalStorage;
   localStorage = new LocalStorage('./scratch');
 }
 userSchema.methods.getJWTToken = function () {
   const token = jwt.sign({ id: this._id }, process.env.JWT_SECRET);
-  console.log('token', token);
 
   return localStorage.setItem('myToken', token);
 };

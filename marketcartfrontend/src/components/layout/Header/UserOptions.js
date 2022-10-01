@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import './userOptions.css';
 import { SpeedDial, SpeedDialAction } from '@material-ui/lab';
-// import Backdrop from '@material-ui/core/Backdrop';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import PersonIcon from '@material-ui/icons/Person';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';

@@ -40,7 +40,6 @@ import UpdateUser from './components/admin/UpdateUser';
 import Contact from './components/layout/Contact/Contact';
 import About from './components/layout/About/About';
 import NotFound from './components/layout/NotFound/NotFound';
-// import { API } from './global';
 function App() {
   const { isAuthenticated, user } = useSelector(state => state.user);
 
@@ -50,7 +49,6 @@ function App() {
       try {
         if (isAuthenticated) {
           const { data } = await axios.get(`/api/v1/stripeapikey`);
-          console.log(data);
           setStripeApiKey(data.stripeApiKey);
         }
       } catch (err) {
@@ -89,7 +87,6 @@ function App() {
         <Route path="/Search" element={<Search />} />
         <Route path="/login" element={<LoginSignUp />} />
 
-        {/* <Route path="/Cart" element={<Cart />} /> */}
         <Route path="/password/forgot" element={<ForgotPassword />} />
 
         <Route path="/password/reset/:token" element={<ResetPassword />} />

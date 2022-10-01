@@ -12,10 +12,6 @@ const OrderSuccess = () => {
   const dispatch = useDispatch();
 
   const payMoney = async () => {
-    // const ID = cartItems[0].product;
-
-    // dispatch(removeItemsFromCart(ID));
-
     for (let i = 0; i < cartItems.length; i++) {
       const ID = await cartItems[i].product;
       dispatch(removeItemsFromCart(ID));

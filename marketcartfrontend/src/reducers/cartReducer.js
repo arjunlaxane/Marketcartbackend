@@ -33,7 +33,6 @@ export const cartReducer = (
         ...state,
         cartItems: state.cartItems.filter(i => i.product !== action.payload),
       };
-    //this will romove that item whose id matches
 
     case SAVE_SHIPPING_INFO:
       return {

@@ -5,7 +5,6 @@ import {
 } from '../constants/cartConstants';
 
 import axios from 'axios';
-// import { API } from '../global';
 //add to cart
 export const addItemsToCart = (id, quantity) => async (dispatch, getState) => {
   const { data } = await axios.get(`/api/v1/product/${id}`);
@@ -43,7 +42,6 @@ export const saveShippingInfo = data => async dispatch => {
     type: SAVE_SHIPPING_INFO,
     payload: data,
   });
-  // localStorage.setItem('shippingInfo', JSON.stringify(data));
 
   sessionStorage.setItem('shippingInfo', JSON.stringify(data));
 };

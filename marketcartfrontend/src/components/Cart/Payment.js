@@ -18,7 +18,6 @@ import CreditCardIcon from '@material-ui/icons/CreditCard';
 import EventIcon from '@material-ui/icons/Event';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import { createOrder, clearErrors } from '../../actions/orderAction';
-// import { API } from '../../global';
 
 const Payment = () => {
   const navigate = useNavigate();

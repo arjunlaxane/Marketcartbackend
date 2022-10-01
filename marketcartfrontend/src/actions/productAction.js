@@ -24,7 +24,6 @@ import {
   UPDATE_PRODUCT_SUCCESS,
   UPDATE_PRODUCT_FAIL,
 } from '../constants/productConstants';
-// import { API } from '../global';
 export const getProduct =
   (keyword = '', currentPage = 1, price = [0, 100000], category, ratings = 0) =>
   async dispatch => {

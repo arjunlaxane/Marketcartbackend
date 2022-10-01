@@ -38,7 +38,6 @@ import {
 } from '../constants/userConstants';
 
 import axios from 'axios';
-// import { API } from '../global';
 
 //login
 export const login = (email, password) => async dispatch => {
@@ -97,7 +96,6 @@ export const loadUser = () => async dispatch => {
 
 export const logout = () => async dispatch => {
   try {
-    //we dont need data as we havent pass anything on success in reducer(no payload)
     await axios.get(`/api/v1/logout`);
 
     dispatch({ type: LOG_OUT_SUCCESS });

@@ -15,7 +15,6 @@ const options = {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode>
   <BrowserRouter>
     <Provider store={store}>
       <AlertProvider template={AlertTemplate} {...options}>
@@ -23,5 +22,4 @@ root.render(
       </AlertProvider>
     </Provider>
   </BrowserRouter>
-  // </React.StrictMode>
 );

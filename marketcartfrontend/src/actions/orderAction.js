@@ -21,7 +21,6 @@ import {
 } from '../constants/orderConstants';
 
 import axios from 'axios';
-// import { API } from '../global';
 
 // Create Order
 export const createOrder = order => async dispatch => {
