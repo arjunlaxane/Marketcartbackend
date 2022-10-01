@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useRef, useState } from 'react';
 import './LoginSignUp.css';
 import Loader from '../layout/Loader/Loader';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 import FaceIcon from '@material-ui/icons/Face';
@@ -13,6 +13,7 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 const LoginSignUp = () => {
   const dispatch = useDispatch();
+  const location = useLocation();
 
   const alert = useAlert();
 
@@ -75,6 +76,8 @@ const LoginSignUp = () => {
     }
   };
 
+  const redirect = location.search ? location.search.split('=')[1] : '/account';
+
   useEffect(() => {
     if (error) {
       alert.error(error);
@@ -82,7 +85,8 @@ const LoginSignUp = () => {
     }
 
     if (isAuthenticated) {
-      return navigate('/account');
+      // navigate('/account');
+      navigate(redirect);
     }
   }, [dispatch, error, alert, navigate, isAuthenticated, redirect]);
 

@@ -13,6 +13,14 @@ const Cart = () => {
   const dispatch = useDispatch();
   const { cartItems } = useSelector(state => state.cart);
 
+  // const item = {
+  //   product: 'productid',
+  //   price: 200,
+  //   name: 'name',
+  //   image: 'https://i.ibb.co/DRST11n/1.webp',
+  //   quantity: 1,
+  // };
+
   const increaseQuantity = (id, quantity, stock) => {
     const newQty = quantity + 1;
     if (stock <= quantity) {
