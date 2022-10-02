@@ -52,6 +52,7 @@
   margin: auto;
   display: grid;
   grid-template-columns: 2fr 2fr 2fr;
+  margin-bottom: 45vmax;
 }
 
 .cartInput {
@@ -103,6 +104,10 @@
   justify-content: space-between;
 }
 
+.cartGrossTotal {
+  margin-top: 5vmax;
+}
+
 .cartGrossTotalBox > p {
   font: 300 1.4vmax cursive;
 }
@@ -125,9 +130,6 @@
 
 .checkOutBtn > button:hover {
   background-color: rgba(66, 145, 89, 0.767);
-}
-.cartGrossTotal {
-  margin-top: 10vmax;
 }
 
 @media screen and (max-width: 900px) {

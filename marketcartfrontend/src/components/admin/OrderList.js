@@ -56,7 +56,7 @@ const OrderList = () => {
     {
       field: 'status',
       headerName: 'Status',
-      minWidth: 150,
+      minWidth: 300,
       flex: 0.5,
       cellClassName: params => {
         return params.getValue(params.id, 'status') === 'Delivered'
@@ -68,7 +68,7 @@ const OrderList = () => {
       field: 'itemsQty',
       headerName: 'Items Qty',
       type: 'number',
-      minWidth: 150,
+      minWidth: 300,
       flex: 0.4,
     },
 
@@ -76,7 +76,7 @@ const OrderList = () => {
       field: 'amount',
       headerName: 'Amount',
       type: 'number',
-      minWidth: 270,
+      minWidth: 300,
       flex: 0.5,
     },
 
@@ -84,7 +84,7 @@ const OrderList = () => {
       field: 'actions',
       flex: 0.3,
       headerName: 'Actions',
-      minWidth: 150,
+      minWidth: 300,
       type: 'number',
       sortable: false,
       renderCell: params => {

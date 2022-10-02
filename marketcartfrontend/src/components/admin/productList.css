@@ -24,7 +24,7 @@
 }
 
 .productListTable div {
-  font: 300 1vmax 'Roboto';
+  font: 300 1.2vmax 'Roboto';
   color: rgba(0, 0, 0, 0.678);
   border: none !important;
 }
@@ -44,29 +44,6 @@
 }
 
 .MuiDataGrid-columnHeader div {
-  color: rgb(221, 221, 221);
-}
-
-@media screen and (min-width: 250px) {
-  .productListTable div {
-    font: 300 2vmax 'Roboto';
-    letter-spacing: 1px;
-  }
-  .productListContainer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-}
-@media screen and (min-width: 500px) {
-  .productListTable div {
-    font: 300 2.1vmax 'Roboto';
-    letter-spacing: 1px;
-  }
-}
-@media screen and (min-width: 700px) {
-  .productListTable div {
-    font: 300 1.2vmax 'Roboto';
-    letter-spacing: 1px;
-  }
+  color: rgb(255, 255, 255);
+  font: 500 2vmax 'Roboto' !important;
 }

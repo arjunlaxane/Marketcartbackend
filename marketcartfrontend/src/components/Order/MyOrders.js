@@ -6,7 +6,7 @@ import { clearErrors, myOrders } from '../../actions/orderAction';
 import Loader from '../layout/Loader/Loader';
 import { Link } from 'react-router-dom';
 import { useAlert } from 'react-alert';
-import Typography from '@material-ui/core/Typography';
+// import Typography from '@material-ui/core/Typography';
 import MetaData from '../layout/Metadata';
 import LaunchIcon from '@material-ui/icons/Launch';
 
@@ -24,7 +24,7 @@ const MyOrders = () => {
     {
       field: 'status',
       headerName: 'Status',
-      minWidth: 50,
+      minWidth: 300,
       flex: 0.5,
       cellClassName: params => {
         return params.getValue(params.id, 'status') === 'Delivered'
@@ -36,7 +36,7 @@ const MyOrders = () => {
       field: 'itemsQty',
       headerName: 'Items Qty',
       type: 'number',
-      minWidth: 50,
+      minWidth: 300,
       flex: 0.3,
     },
 
@@ -44,7 +44,7 @@ const MyOrders = () => {
       field: 'amount',
       headerName: 'Amount',
       type: 'number',
-      minWidth: 50,
+      minWidth: 300,
       flex: 0.5,
     },
 
@@ -52,7 +52,7 @@ const MyOrders = () => {
       field: 'actions',
       flex: 0.3,
       headerName: 'Actions',
-      minWidth: 50,
+      minWidth: 300,
       type: 'number',
       sortable: false,
       renderCell: params => {
@@ -101,8 +101,8 @@ const MyOrders = () => {
             className="myOrdersTable"
             autoHeight
           />
-
-          <Typography id="myOrdersHeading">{user.name}'s Orders</Typography>
+          {/* 
+          <Typography id="myOrdersHeading">{user.name}'s Orders</Typography> */}
         </div>
       )}
     </Fragment>

@@ -51,18 +51,18 @@ const UsersList = () => {
   }, [dispatch, alert, error, deleteError, navigate, isDeleted, message]);
 
   const columns = [
-    { field: 'id', headerName: 'User ID', minWidth: 180, flex: 0.8 },
+    { field: 'id', headerName: 'User ID', minWidth: 300, flex: 0.8 },
 
     {
       field: 'email',
       headerName: 'Email',
-      minWidth: 200,
+      minWidth: 300,
       flex: 1,
     },
     {
       field: 'name',
       headerName: 'Name',
-      minWidth: 150,
+      minWidth: 300,
       flex: 0.5,
     },
 
@@ -70,7 +70,7 @@ const UsersList = () => {
       field: 'role',
       headerName: 'Role',
       type: 'number',
-      minWidth: 150,
+      minWidth: 300,
       flex: 0.3,
       cellClassName: params => {
         return params.getValue(params.id, 'role') === 'admin'
@@ -83,7 +83,7 @@ const UsersList = () => {
       field: 'actions',
       flex: 0.3,
       headerName: 'Actions',
-      minWidth: 150,
+      minWidth: 300,
       type: 'number',
       sortable: false,
       renderCell: params => {
