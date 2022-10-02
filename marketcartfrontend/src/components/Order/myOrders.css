@@ -55,7 +55,7 @@
   display: none !important;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1800px) {
   .myOrdersPage {
     padding: 0;
     height: 93vh;
