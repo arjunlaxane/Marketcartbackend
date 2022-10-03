@@ -56,7 +56,9 @@ exports.getProductDetails = async (req, res, next) => {
     return console.log('Error', err);
   }
   if (!product) {
-    return next(new ErrorHander('Product not found', 404));
+    return res.status(404).json({
+      message: 'Product not found',
+    });
   }
 
   res.status(200).json({
@@ -96,13 +98,13 @@ exports.updateProduct = async (req, res, next) => {
     if (images !== undefined) {
       // Deleting Images From Cloudinary
       for (let i = 0; i < product.images.length; i++) {
-        await cloudinary.v2.uploader.destroy(product.images[i].public_id);
+        await cloudinary.uploader.destroy(product.images[i].public_id);
       }
 
       const imagesLinks = [];
 
       for (let i = 0; i < images.length; i++) {
-        const result = await cloudinary.v2.uploader.upload(images[i], {
+        const result = await cloudinary.uploader.upload(images[i], {
           folder: 'products',
         });
 
