@@ -105,9 +105,9 @@ exports.updateOrder = async (req, res, next) => {
 
   try {
     if (order.orderStatus === 'Delivered') {
-      return next(
-        new ErrorHandler('You have already delivered this order', 400)
-      );
+      return res
+        .status(400)
+        .json({ message: 'You have already delivered this order' });
     }
 
     if (req.body.status === 'Shipped') {
