@@ -48,6 +48,7 @@ const userSchema = new mongoose.Schema({
 
 userSchema.pre('save', async function (next) {
   if (!this.isModified('password')) {
+    //update profile
     next();
   }
 
@@ -63,7 +64,7 @@ if (typeof localStorage === 'undefined' || localStorage === null) {
 userSchema.methods.getJWTToken = function () {
   const token = jwt.sign({ id: this._id }, process.env.JWT_SECRET);
 
-  return localStorage.setItem('myToken', token);
+  return localStorage.setItem('token', token);
 };
 
 // Compare Password

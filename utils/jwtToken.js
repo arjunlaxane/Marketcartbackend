@@ -3,7 +3,7 @@ require('dotenv').config({ path: 'config.env' });
 
 const sendToken = (user, statusCode, res) => {
   let token = user.getJWTToken();
-  // token = localStorage.getItem('myToken');
+  // token = localStorage.getItem('token');
 
   res.status(statusCode).json({
     success: true,

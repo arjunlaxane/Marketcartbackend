@@ -75,7 +75,7 @@ exports.loginUser = async (req, res, next) => {
 //logout user
 
 exports.logout = async (req, res, next) => {
-  localStorage.removeItem('myToken');
+  localStorage.removeItem('token');
   res.status(200).json({
     success: true,
     message: 'Logged out successfully',

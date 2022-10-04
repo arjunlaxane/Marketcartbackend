@@ -4,14 +4,14 @@ const User = require('../models/userModel.js');
 
 exports.isAuthenticatedUser = async (req, res, next) => {
   try {
-    const myToken = localStorage.getItem('myToken');
+    const token = localStorage.getItem('token');
 
-    if (!myToken) {
+    if (!token) {
       return res
         .status(401)
         .json({ message: 'Please login to access this resource' });
     }
-    const decodedData = jwt.verify(myToken, process.env.JWT_SECRET);
+    const decodedData = jwt.verify(token, process.env.JWT_SECRET);
 
     req.user = await User.findById(decodedData.id);
 

@@ -33,7 +33,6 @@ class ApiFeatures {
         }
       : {};
 
-    //it is getting keyword from regex
     this.query = this.query.find({ ...keyword });
     return this;
   }
@@ -48,8 +47,6 @@ class ApiFeatures {
     removeFields.forEach(key => delete queryCopy[key]);
 
     //filter for price and rating
-
-    //qurycopy is object
 
     let queryStr = JSON.stringify(queryCopy);
 
@@ -75,8 +72,6 @@ class ApiFeatures {
 router.get('/products', async (req, res) => {
   try {
     const resultPerPage = 8;
-
-    // this productcount is for dashboard for frontend
 
     const productsCount = await Product.countDocuments();
 
