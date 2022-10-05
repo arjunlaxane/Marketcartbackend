@@ -6,6 +6,7 @@ const express = require('express');
 
 const fileUpload = require('express-fileupload');
 
+const path = require('path');
 var cloudinary = require('cloudinary').v2;
 
 //config
