@@ -137,3 +137,9 @@
     width: 40%;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .cartContainer {
+    margin-bottom: 32vmax;
+  }
+}
