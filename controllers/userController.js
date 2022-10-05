@@ -103,7 +103,7 @@ exports.forgotPassword = async (req, res, next) => {
 
   // const resetPasswordUrl = `${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
 
-  const message = `Your password reset token is:- \n\n ${resetPasswordUrl} \n\nIf you have not requested this email then,please ignore it`;
+  const message = `Your password reset token is ttemp:- \n\n ${resetPasswordUrl} \n\nIf you have not requested this email then,please ignore it`;
 
   try {
     await sendEmail({
@@ -277,31 +277,6 @@ exports.getSingleUser = async (req, res, next) => {
     success: true,
     user,
   });
-};
-
-// update User password
-exports.updatePassword = async (req, res, next) => {
-  try {
-    const user = await User.findById(req.user.id).select('+password');
-
-    const isPasswordMatched = await user.comparePassword(req.body.oldPassword);
-
-    if (!isPasswordMatched) {
-      return res.status(400).json({ message: 'Old password is incorrect' });
-    }
-
-    if (req.body.newPassword !== req.body.confirmPassword) {
-      return res.status(400).json({ message: 'password does not match' });
-    }
-
-    user.password = req.body.newPassword;
-
-    await user.save();
-
-    sendToken(user, 200, res);
-  } catch (err) {
-    console.log('error', err);
-  }
 };
 
 // update user role---admin
