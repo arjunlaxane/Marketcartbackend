@@ -103,7 +103,7 @@ exports.forgotPassword = async (req, res, next) => {
 
   // const resetPasswordUrl = `${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
 
-  const message = `Your password reset token is ttemp:- \n\n ${resetPasswordUrl} \n\nIf you have not requested this email then,please ignore it`;
+  const message = `Your password reset token is:- \n\n ${resetPasswordUrl} \n\nIf you have not requested this email then,please ignore it`;
 
   try {
     await sendEmail({
