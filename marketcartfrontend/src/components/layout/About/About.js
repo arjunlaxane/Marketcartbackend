@@ -1,6 +1,6 @@
 import React from 'react';
 import './About.css';
-import pic from '../../../images/banner.jpg';
+import pic from '../../../images/profile.jpg';
 import WebIcon from '@mui/icons-material/Web';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { Fragment } from 'react';
